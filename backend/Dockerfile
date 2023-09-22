@@ -1,12 +1,11 @@
-FROM python:3.8
+FROM python:3.8.10
 
 WORKDIR /app
 
-COPY ./src /app
-COPY ./requirements.txt /app
+COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5006
+EXPOSE 5000
 
-CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["python", "src/main.py", "--host", "0.0.0.0"]
