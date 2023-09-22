@@ -4,10 +4,10 @@ WORKDIR /app
 
 RUN npm install -g pnpm
 
-COPY package*.json ./
+COPY . /app
 
 RUN pnpm install
 
-EXPOSE 5173
+RUN pnpm run build
 
-CMD ["pnpm", "run", "dev-host"]
+CMD ["pnpm", "start"]
