@@ -15,7 +15,7 @@ from configuration.config import config
 app = Flask(__name__)
 
 # Config app
-flask_env = os.environ.get('FLASK_ENV', 'development')
+flask_env = os.environ.get('FLASK_ENV', 'production')
 app.config.from_object(config[flask_env])
 
 # Init cors

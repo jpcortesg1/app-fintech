@@ -12,14 +12,13 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'DATABASE_URI', 'sqlite:///db.sqlite3')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
-    MAIL_PORT = os.environ.get('MAIL_PORT', 465)
-    MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL', True)
-    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', False)
 
 
 class ProductionConfig(Config):
     DEBUG = False
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        'DATABASE_URI', 'sqlite:///db.sqlite3')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class TestingConfig(Config):
