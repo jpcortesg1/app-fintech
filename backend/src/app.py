@@ -20,11 +20,12 @@ app.config.from_object(config[flask_env])
 
 # Init cors
 url_frontend = os.environ.get('URL_FRONT', 'http://localhost:5173')
-CORS(app, resources={
-    r"/*": {"origins": url_frontend},
-    r"/": {"origins": url_frontend},
-    r"": {"origins": url_frontend},
-})
+# CORS(app, resources={
+#     r"/*": {"origins": url_frontend},
+#     r"/": {"origins": url_frontend},
+#     r"": {"origins": url_frontend},
+# })
+CORS(app)
 
 # Init db
 db = SQLAlchemy(app)
