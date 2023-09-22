@@ -37,7 +37,7 @@ def login():
             'id': user['id'],
         }
         jwt = create_access_token(
-            identity=user_data, additional_claims=user_data, expires_delta=timedelta(minutes=1))
+            identity=user_data, additional_claims=user_data, expires_delta=timedelta(hours=2))
 
         return jsonify({'message': 'Auth route is working!', 'status': 200, 'data': {
             'jwt': jwt
