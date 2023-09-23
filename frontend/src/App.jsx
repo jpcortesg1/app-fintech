@@ -1,6 +1,6 @@
 import TopBar from "./Components/TopBar";
 import Home from "./pages/Home";
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
 import { useDispatch, useSelector } from "react-redux";
@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <Alert />
-      <HashRouter>
+      <BrowserRouter>
         {jwt ? <Sidebar /> : <TopBar />}
         <Routes>
           <Route path="/">
@@ -63,7 +63,7 @@ function App() {
             <Route path="budgets" element={isNotLogged(<Budgets />)} />
           </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
